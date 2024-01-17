@@ -1,0 +1,20 @@
+import { Router } from 'express';
+import * as controller from '../controllers/grade.controller.js';
+import validate from '../middlewares/validate.js';
+import * as schema from '../validators/grade.validator.js';
+
+const router = Router();
+
+router.route('/').get(controller.list).post(validate(schema.create), controller.create);
+
+router
+  .route('/:id')
+  .get(validate(schema.byId), controller.getOne)
+  .patch(validate(schema.update), controller.update)
+  .delete(validate(schema.byId), controller.remove);
+
+router.get('/:id/subjects', validate(schema.byId), controller.subjects);
+router.get('/:id/students', validate(schema.byId), controller.students);
+router.get('/:id/journal', validate(schema.byId), controller.journal);
+
+export default router;
