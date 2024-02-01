@@ -1,0 +1,29 @@
+$bp-sm: 640px;
+$bp-md: 900px;
+$bp-lg: 1200px;
+
+$sidebar-width: 264px;
+$topbar-height: 68px;
+
+@mixin down($bp) {
+  @media (max-width: ($bp - 1px)) {
+    @content;
+  }
+}
+
+@mixin up($bp) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--primary-ring);
+}
+
+@mixin truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
