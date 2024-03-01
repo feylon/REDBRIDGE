@@ -41,6 +41,8 @@ REDBRIDGE/
 
 ## Docker orqali ishga tushirish
 
+Batafsil qo'llanma: [docs/ISHGA_TUSHIRISH.md](docs/ISHGA_TUSHIRISH.md)
+
 ```bash
 cp .env.example .env
 docker compose up -d --build
