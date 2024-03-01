@@ -6,9 +6,9 @@ coverage
 *.log
 npm-debug.log*
 
-.env
-.env.*
-!.env.example
+# .env
+# .env.*
+# !.env.example
 
 .vscode/*
 !.vscode/extensions.json
